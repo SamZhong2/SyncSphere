@@ -133,3 +133,4 @@ For answers to common questions about this code of conduct, see the FAQ at
 [translations]: https://www.contributor-covenant.org/translations
 
 ![Conor Battell Signature Screenshot](https://drive.google.com/file/d/1gSbx5lLouvdvCtG9GCUoCYL4FUhBy8Ks/view?usp=drive_link)
+![Matt McCune Signature Screenshot](https://drive.google.com/file/d/1isJLw1U0y1RQfuYgF04wTx5vvIgsVNMZ/view?usp=sharing)
