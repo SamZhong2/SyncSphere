@@ -38,7 +38,7 @@ Examples of unacceptable behavior include:
 * Other conduct which could reasonably be considered inappropriate in a
   professional setting
 * The use of cell phone is not allowed during class time
-* Meetings should not be skiped without prior ntice
+* Meetings should not be skiped without prior notice
 
 
 
