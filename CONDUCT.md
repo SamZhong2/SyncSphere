@@ -132,7 +132,7 @@ For answers to common questions about this code of conduct, see the FAQ at
 
 ![Matt McCune Signature Screenshot](https://github.com/user-attachments/assets/a8c21e7c-aab5-4716-86e9-0707e8c9a7d4))
 
-![Matt Kyle Signature](https://github.com/user-attachments/files/18947173/signature.pdf)
+![Matt Kyle Signature]![signature](https://github.com/user-attachments/assets/b683ab6f-c8b3-4b8d-8493-04a1ff51d40c)
 
 ![Max Levine Signature Screenshot](https://github.com/user-attachments/assets/bd380488-faf9-4036-8e4e-c77463b6a1cc)
 
