@@ -25,6 +25,7 @@ community include:
   and learning from the experience
 * Focusing on what is best not just for us as individuals, but for the overall
   community
+* Progress should be made each meeting the team meets
 
 Examples of unacceptable behavior include:
 
@@ -36,6 +37,10 @@ Examples of unacceptable behavior include:
   without their explicit permission
 * Other conduct which could reasonably be considered inappropriate in a
   professional setting
+* The use of cell phone is not allowed during class time
+* Meetings should not be skiped without prior ntice
+
+
 
 ## Enforcement Responsibilities
 
