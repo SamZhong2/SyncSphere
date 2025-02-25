@@ -130,7 +130,7 @@ For answers to common questions about this code of conduct, see the FAQ at
 
 ![Conor Battell Signature](https://github.com/user-attachments/assets/b1b04499-ec99-45c8-a2d6-1e22544104b3)
 
-![Matt McCune Signature Screenshot](https://drive.google.com/file/d/1isJLw1U0y1RQfuYgF04wTx5vvIgsVNMZ/view?usp=sharing)
+![Matt McCune Signature Screenshot](https://github.com/user-attachments/assets/a8c21e7c-aab5-4716-86e9-0707e8c9a7d4))
 
 ![Matt Kyle Signature](https://github.com/user-attachments/files/18947173/signature.pdf)
 
