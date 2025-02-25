@@ -136,3 +136,5 @@ For answers to common questions about this code of conduct, see the FAQ at
 
 ![Max Levine Signature Screenshot](https://github.com/user-attachments/assets/bd380488-faf9-4036-8e4e-c77463b6a1cc)
 
+<img width="1043" alt="CSC305_Signiture" src="https://github.com/user-attachments/assets/8a76fc4d-d15c-4c99-b206-64f9c393e0ab" />
+
