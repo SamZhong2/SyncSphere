@@ -1,3 +1,4 @@
+![Conor Battell Signature](https://github.com/user-attachments/assets/b1b04499-ec99-45c8-a2d6-1e22544104b3)
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge
