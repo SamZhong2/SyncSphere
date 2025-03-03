@@ -1,4 +1,5 @@
-*Observation Statement*:
+#Observation Statement#:
+
   Users want more customizable and context-aware notifications to reduce notification fatigue and improve task management.
   Supporting Data:
   Users express frustration with excessive notifications but still want timely reminders.
