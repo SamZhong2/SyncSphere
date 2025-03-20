@@ -5,3 +5,4 @@
 | Metric                | Data Collection Method |
 |----------------------|-------------|
 | **NPS (Net Promoter Score)** | A survey prompt will be added at the end of the Golden Path, with responses stored in Firestore |
+| **Retention** | We will capture first signup and login times, how long the user stays on the app after login / signup |
