@@ -33,10 +33,8 @@ Firebase events will be triggered when users enter the home screen, tracking the
 ## Variations:
 We will test three variations against our control:
 
-1. **Control (Current)**: Standard white/light gray background
-2. **Variation A**: Soft blue background (#E6F2FF) - Known for promoting trust and calmness
-3. **Variation B**: Light green background (#E8F5E9) - Associated with growth and harmony
-4. **Variation C**: Warm beige background (#F5F5DC) - Creates a sense of comfort and familiarity
+1. **Control (Current app basics)**: white/pink background to match primary colors of app
+2. **Variation A**: #EAEAEA - soft gray backgorund
 
 Each variation will maintain the same layout and functionality, changing only the background color. The home screen will include clear navigation elements and key content sections that remain consistent across all variations.
 
