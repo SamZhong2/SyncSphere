@@ -148,4 +148,38 @@ Responsive design and accessibility considerations will be included to accommoda
 
 ---
 
+# Services (Custom Metric)
+
+## Selected Services Ratio Over Users Logged In
+
+### Metric Definition:
+This custom metric tracks the ratio of selected services to total users logged into the application. The selected services of a user are stored in Firestore and analyzed in relation to the total number of logged-in users over a given period. 
+
+### Purpose:
+This metric helps understand service engagement levels and user preferences, providing insights into how frequently users select services relative to total logins. By analyzing trends, the data can inform optimizations to improve user experience and service adoption.
+
+### Formula:
+**Selected Services Ratio** = (Number of Users Who Selected a Service) / (Total Logged-In Users)
+
+### Data Collection:
+1. When a user logs in, their session is recorded.
+2. If the user selects one or more services during the session, these selections are stored in Firestore.
+3. The total number of logged-in users is tracked over a specific period.
+4. The selected services ratio is calculated based on the stored data.
+
+### Use Cases:
+- Identifying the most popular services.
+- Tracking service adoption trends over time.
+- Assessing the impact of UI/UX changes on service selection.
+- Comparing service selection rates across different user segments.
+
+### Integration with Firebase Analytics:
+To track and analyze this metric, Firebase Analytics will be configured with custom events:
+- `user_logged_in` (Triggers on user login)
+- `service_selected` (Triggers when a user selects a service)
+- `service_ratio_calculated` (Logged periodically for analysis)
+
+### Experimentation and Optimization:
+A/B testing can be employed to measure the impact of UI changes, feature placements, and personalized recommendations on service selection rates. Insights from this metric will guide improvements to maximize user engagement with available services.
+
 
