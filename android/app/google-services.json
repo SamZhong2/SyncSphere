@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "531824345975",
+    "project_id": "sync-sphere-5rp6qk",
+    "storage_bucket": "sync-sphere-5rp6qk.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531824345975:android:455f79fdee7a0aa298d772",
+        "android_client_info": {
+          "package_name": "com.mycompany.syncsphere"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "531824345975-n0f08tgmbtah08t8pld7puosmtbktl2m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.syncsphere",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "531824345975-qjrecm3rdvh7ji41j41126aj8igv64to.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtDVseiLbbncwi_jhqcCo9rQCM9CwQ9Lo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "531824345975-4osrc9bvcbdbrcdhl2sc9eu7dgjr380q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "531824345975-kj1nqu7c3tl7j0d6cra0s54a7re3nlns.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.uricsc305.SyncSphere"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531824345975:android:14477ac8c45ba33998d772",
+        "android_client_info": {
+          "package_name": "com.uricsc305.SyncSphere"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "531824345975-t4t2u7t187en3nbvr5ii6um22qmm3tq3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uricsc305.SyncSphere",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "531824345975-qjrecm3rdvh7ji41j41126aj8igv64to.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtDVseiLbbncwi_jhqcCo9rQCM9CwQ9Lo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "531824345975-4osrc9bvcbdbrcdhl2sc9eu7dgjr380q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "531824345975-kj1nqu7c3tl7j0d6cra0s54a7re3nlns.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.uricsc305.SyncSphere"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
