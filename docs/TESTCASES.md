@@ -1,5 +1,5 @@
 - <link to template slide> US1: User Account Creation
 - <https://docs.google.com/presentation/d/1e1_6V2WAImaw0ZGMlQpf596XBYsEQdZeA-9EGADU_S4/edit?usp=sharing> US2: User Login
-- <link to template slide> US3: Backend Management
+- <https://docs.google.com/presentation/d/1pE-UQOQy67aD__F2bSJIwDLSOppiygXt4DZa64cYdYM/edit?slide=id.p#slide=id.p> US3: Backend Management
 - <link to template slide> US4: {Golden Path description}
 - <link to template slide> US5: …
