@@ -130,6 +130,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       Align(
                         alignment: AlignmentDirectional(0.0, 0.0),
                         child: FlutterFlowIconButton(
+                          key: ValueKey('IconButton_yxdf'),
                           borderRadius: 8.0,
                           buttonSize: 40.0,
                           fillColor: FlutterFlowTheme.of(context).secondary,
