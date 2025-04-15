@@ -3,4 +3,4 @@
 - <https://docs.google.com/presentation/d/1e1_6V2WAImaw0ZGMlQpf596XBYsEQdZeA-9EGADU_S4/edit?usp=sharing> US2: User Login
 - <https://docs.google.com/presentation/d/1pE-UQOQy67aD__F2bSJIwDLSOppiygXt4DZa64cYdYM/edit?slide=id.p#slide=id.p> US3: Backend Management
 - [US4: Golden Path](https://docs.google.com/presentation/d/1xG-zGEUM4wZF1_aP3bBmE-sOliUEfKA97n7K7VaUqpo/edit#slide=id.p)
-- <link to template slide> US5: …
+- [US5: Smart Notifications & Event Reminders](https://docs.google.com/presentation/d/1xG-zGEUM4wZF1_aP3bBmE-sOliUEfKA97n7K7VaUqpo/edit#slide=id.p)
