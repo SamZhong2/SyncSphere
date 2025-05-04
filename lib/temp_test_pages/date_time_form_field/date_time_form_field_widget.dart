@@ -1,6 +1,8 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'date_time_form_field_model.dart';
 export 'date_time_form_field_model.dart';
 
@@ -8,9 +10,15 @@ class DateTimeFormFieldWidget extends StatefulWidget {
   const DateTimeFormFieldWidget({
     super.key,
     required this.titleText,
+    this.preDateTime,
+    this.startTime,
+    this.endTime,
   });
 
   final String? titleText;
+  final DateTime? preDateTime;
+  final DateTime? startTime;
+  final DateTime? endTime;
 
   @override
   State<DateTimeFormFieldWidget> createState() =>
@@ -30,6 +38,14 @@ class _DateTimeFormFieldWidgetState extends State<DateTimeFormFieldWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DateTimeFormFieldModel());
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      logFirebaseEvent('DATE_TIME_FORM_FIELD_dateTimeFormField_O');
+      logFirebaseEvent('dateTimeFormField_update_component_state');
+      _model.currentDateTime = widget.preDateTime;
+      safeSetState(() {});
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -57,8 +73,17 @@ class _DateTimeFormFieldWidgetState extends State<DateTimeFormFieldWidget> {
             child: Text(
               widget.titleText!,
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Inter',
+                    font: GoogleFonts.inter(
+                      fontWeight:
+                          FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                    ),
                     letterSpacing: 0.0,
+                    fontWeight:
+                        FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                   ),
             ),
           ),
@@ -72,9 +97,9 @@ class _DateTimeFormFieldWidgetState extends State<DateTimeFormFieldWidget> {
               logFirebaseEvent('Container_date_time_picker');
               final _datePickedDate = await showDatePicker(
                 context: context,
-                initialDate: getCurrentTimestamp,
-                firstDate: getCurrentTimestamp,
-                lastDate: DateTime(2050),
+                initialDate: (widget.preDateTime ?? DateTime.now()),
+                firstDate: (widget.startTime ?? DateTime(1900)),
+                lastDate: (widget.endTime ?? DateTime(2050)),
                 builder: (context, child) {
                   return wrapInMaterialDatePickerTheme(
                     context,
@@ -83,10 +108,18 @@ class _DateTimeFormFieldWidgetState extends State<DateTimeFormFieldWidget> {
                     headerForegroundColor: FlutterFlowTheme.of(context).info,
                     headerTextStyle:
                         FlutterFlowTheme.of(context).headlineLarge.override(
-                              fontFamily: 'Inter Tight',
+                              font: GoogleFonts.interTight(
+                                fontWeight: FontWeight.w600,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .headlineLarge
+                                    .fontStyle,
+                              ),
                               fontSize: 32.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .headlineLarge
+                                  .fontStyle,
                             ),
                     pickerBackgroundColor:
                         FlutterFlowTheme.of(context).secondaryBackground,
@@ -107,7 +140,8 @@ class _DateTimeFormFieldWidgetState extends State<DateTimeFormFieldWidget> {
               if (_datePickedDate != null) {
                 _datePickedTime = await showTimePicker(
                   context: context,
-                  initialTime: TimeOfDay.fromDateTime(getCurrentTimestamp),
+                  initialTime: TimeOfDay.fromDateTime(
+                      (widget.preDateTime ?? DateTime.now())),
                   builder: (context, child) {
                     return wrapInMaterialTimePickerTheme(
                       context,
@@ -117,10 +151,18 @@ class _DateTimeFormFieldWidgetState extends State<DateTimeFormFieldWidget> {
                       headerForegroundColor: FlutterFlowTheme.of(context).info,
                       headerTextStyle:
                           FlutterFlowTheme.of(context).headlineLarge.override(
-                                fontFamily: 'Inter Tight',
+                                font: GoogleFonts.interTight(
+                                  fontWeight: FontWeight.w600,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .fontStyle,
+                                ),
                                 fontSize: 32.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .headlineLarge
+                                    .fontStyle,
                               ),
                       pickerBackgroundColor:
                           FlutterFlowTheme.of(context).secondaryBackground,
@@ -150,9 +192,12 @@ class _DateTimeFormFieldWidgetState extends State<DateTimeFormFieldWidget> {
                 });
               } else if (_model.datePicked != null) {
                 safeSetState(() {
-                  _model.datePicked = getCurrentTimestamp;
+                  _model.datePicked = widget.preDateTime;
                 });
               }
+              logFirebaseEvent('Container_update_component_state');
+              _model.currentDateTime = _model.datePicked;
+              safeSetState(() {});
             },
             child: Container(
               width: double.infinity,
@@ -176,10 +221,23 @@ class _DateTimeFormFieldWidgetState extends State<DateTimeFormFieldWidget> {
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                   child: Text(
-                    dateTimeFormat("EEEE, MMMM d @ h:mm a", _model.datePicked),
+                    dateTimeFormat(
+                        "EEEE, MMMM d @ h:mm a", _model.currentDateTime),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Inter',
+                          font: GoogleFonts.inter(
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
+                          ),
                           letterSpacing: 0.0,
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                         ),
                   ),
                 ),

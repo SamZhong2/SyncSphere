@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+1
+version: 2.0.0+10
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -28,7 +28,6 @@ dependencies:
   flutter_web_plugins:
     sdk: flutter
   auto_size_text: 3.0.0
-  badges: 2.0.2
   cached_network_image: 3.4.1
   cached_network_image_platform_interface: 4.1.1
   cached_network_image_web: 1.3.1
@@ -41,6 +40,8 @@ dependencies:
   collection: 1.19.0
   csslib: 0.17.3
   dropdown_button2: 2.3.9
+  easy_debounce: 2.0.1
+  equatable: 2.0.5
   file_picker: 8.1.2
   firebase_analytics: 11.3.5
   firebase_analytics_platform_interface: 4.2.7
@@ -63,20 +64,24 @@ dependencies:
   firebase_storage: 12.3.2
   firebase_storage_platform_interface: 5.1.33
   firebase_storage_web: 3.10.5
+  floating_bottom_navigation_bar: 1.5.2
   flutter_animate: 4.5.0
   flutter_cache_manager: 3.4.1
+  flutter_markdown: 0.7.3+1
   flutter_plugin_android_lifecycle: 2.0.20
   flutter_rating_bar: 4.0.1
   font_awesome_flutter: 10.7.0
   from_css_color: 2.0.0
   go_router: 12.1.3
   google_fonts: 6.1.0
+  google_mobile_ads: 5.1.0
   google_sign_in: 6.2.1
   google_sign_in_android: 6.1.30
   google_sign_in_ios: 5.7.7
   google_sign_in_platform_interface: 2.4.5
   google_sign_in_web: 0.12.4+2
   html: 0.15.4
+  http: 1.2.2
   image_picker: 1.1.2
   image_picker_android: 0.8.12+13
   image_picker_for_web: 3.0.5
@@ -177,6 +182,7 @@ flutter:
     - assets/pdfs/
     - assets/jsons/
 
+    - assets/environment_values/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -31,6 +31,128 @@ void main() async {
     await appState.initializePersistedState();
   });
 
+  group('final', () {
+    testWidgets('Login', (WidgetTester tester) async {
+      _overrideOnError();
+
+      await tester.pumpWidget(ChangeNotifierProvider(
+        create: (context) => FFAppState(),
+        child: MyApp(
+          entryPage: LoginWidget(),
+        ),
+      ));
+      await GoogleFonts.pendingFonts();
+
+      await tester.tap(find.byKey(const ValueKey('Tab_yws6')));
+      await tester.pump(kDoubleTapMinTime);
+      await tester.tap(find.byKey(const ValueKey('Tab_yws6')));
+      await tester.pumpAndSettle(
+        const Duration(milliseconds: 200),
+        EnginePhase.sendSemanticsUpdate,
+        const Duration(milliseconds: 1000),
+      );
+      await tester.enterText(
+          find.byKey(const ValueKey('emailAddress_Login_dk5y')),
+          'testfinal@gmail.com');
+      await tester.enterText(
+          find.byKey(const ValueKey('password_Login_v282')), 'testfinal');
+      await tester.tap(find.byKey(const ValueKey('Button_s149')));
+      await tester.pumpAndSettle(
+        const Duration(milliseconds: 200),
+        EnginePhase.sendSemanticsUpdate,
+        const Duration(milliseconds: 1000),
+      );
+      expect(find.byKey(const ValueKey('calendarItem_si15')), findsWidgets);
+    });
+
+    testWidgets('Failed login', (WidgetTester tester) async {
+      _overrideOnError();
+
+      await tester.pumpWidget(ChangeNotifierProvider(
+        create: (context) => FFAppState(),
+        child: MyApp(
+          entryPage: LoginWidget(),
+        ),
+      ));
+      await GoogleFonts.pendingFonts();
+
+      await tester.tap(find.byKey(const ValueKey('Tab_yws6')));
+      await tester.pump(kDoubleTapMinTime);
+      await tester.tap(find.byKey(const ValueKey('Tab_yws6')));
+      await tester.pumpAndSettle(
+        const Duration(milliseconds: 200),
+        EnginePhase.sendSemanticsUpdate,
+        const Duration(milliseconds: 1000),
+      );
+      await tester.enterText(
+          find.byKey(const ValueKey('emailAddress_Login_dk5y')), 'notTest');
+      await tester.enterText(
+          find.byKey(const ValueKey('password_Login_v282')), 'noPass');
+      await tester.tap(find.byKey(const ValueKey('Button_s149')));
+      await tester.pumpAndSettle(
+        const Duration(milliseconds: 200),
+        EnginePhase.sendSemanticsUpdate,
+        const Duration(milliseconds: 1000),
+      );
+      expect(find.byKey(const ValueKey('Image_r9xi')), findsOneWidget);
+    });
+
+    testWidgets('Navigate to cal AI', (WidgetTester tester) async {
+      _overrideOnError();
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: 'testfinal@gmail.com', password: 'testfinal');
+      await tester.pumpWidget(ChangeNotifierProvider(
+        create: (context) => FFAppState(),
+        child: MyApp(
+          entryPage: HomePageWidget(),
+        ),
+      ));
+      await GoogleFonts.pendingFonts();
+
+      await tester.tap(find.text('Cal AI'));
+      await tester.pumpAndSettle(
+        const Duration(milliseconds: 200),
+        EnginePhase.sendSemanticsUpdate,
+        const Duration(milliseconds: 1000),
+      );
+      expect(find.byKey(const ValueKey('Button_nqdt')), findsOneWidget);
+    });
+
+    testWidgets('Signup', (WidgetTester tester) async {
+      _overrideOnError();
+
+      await tester.pumpWidget(ChangeNotifierProvider(
+        create: (context) => FFAppState(),
+        child: MyApp(
+          entryPage: LoginWidget(),
+        ),
+      ));
+      await GoogleFonts.pendingFonts();
+
+      await tester.tap(find.byKey(const ValueKey('Login_nlxi')));
+      await tester.pump(kDoubleTapMinTime);
+      await tester.tap(find.byKey(const ValueKey('Login_nlxi')));
+      await tester.pumpAndSettle(
+        const Duration(milliseconds: 200),
+        EnginePhase.sendSemanticsUpdate,
+        const Duration(milliseconds: 1000),
+      );
+      await tester.enterText(
+          find.byKey(const ValueKey('Signup-email_in9u')), 'mrow');
+      await tester.enterText(
+          find.byKey(const ValueKey('password_Create_yy0q')), 'miau');
+      await tester.enterText(
+          find.byKey(const ValueKey('password_CreateConfirm_rxko')), 'blep');
+      await tester.tap(find.byKey(const ValueKey('Button_ybnp')));
+      await tester.pumpAndSettle(
+        const Duration(milliseconds: 200),
+        EnginePhase.sendSemanticsUpdate,
+        const Duration(milliseconds: 1000),
+      );
+      expect(find.byKey(const ValueKey('Image_r9xi')), findsOneWidget);
+    });
+  });
+
   testWidgets('US4 Golden Path- succesful import', (WidgetTester tester) async {
     _overrideOnError();
 
