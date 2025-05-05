@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'serialization_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -114,15 +116,20 @@ class ParameterData {
 
 final parametersBuilderMap =
     <String, Future<ParameterData> Function(Map<String, dynamic>)>{
-  'HomePage': ParameterData.none(),
   'Login': ParameterData.none(),
-  'Onboarding_Info': ParameterData.none(),
   'Onboarding_Emails': ParameterData.none(),
-  'tempPageLinking': ParameterData.none(),
   'tempCalendar': (data) async => ParameterData(
         allParams: <String, dynamic>{},
       ),
-  'Calendar': ParameterData.none(),
+  'Onboarding_Info': ParameterData.none(),
+  'HomePage': ParameterData.none(),
+  'CalendarListView': (data) async => ParameterData(
+        allParams: {
+          'calendarDoc': await getDocumentParameter<CalendarRecord>(
+              data, 'calendarDoc', CalendarRecord.fromSnapshot),
+        },
+      ),
+  'AiPage': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

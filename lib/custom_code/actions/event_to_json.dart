@@ -1,5 +1,7 @@
 // Automatic FlutterFlow imports
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
+import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'index.dart'; // Imports other custom actions
@@ -10,15 +12,17 @@ import 'package:flutter/material.dart';
 
 Future<dynamic> eventToJson(
   String title,
-  String description,
+  String? description,
+  String? location,
   DateTime startTime,
   DateTime endTime,
 ) async {
   final json = {
     'summary': title,
     'description': description,
+    'location': location,
     'start': {'dateTime': startTime.toUtc().toIso8601String()},
     'end': {'dateTime': endTime.toUtc().toIso8601String()},
   };
-  return json;
+  return [json];
 }

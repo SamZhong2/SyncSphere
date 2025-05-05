@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'onboarding_emails_model.dart';
 export 'onboarding_emails_model.dart';
@@ -93,8 +94,21 @@ class _OnboardingEmailsWidgetState extends State<OnboardingEmailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  fontFamily: 'Inter Tight',
+                                  font: GoogleFonts.interTight(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .headlineLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .headlineLarge
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .fontStyle,
                                 ),
                           ),
                         ),
@@ -107,8 +121,21 @@ class _OnboardingEmailsWidgetState extends State<OnboardingEmailsWidget> {
                     child: Text(
                       'What services would you like to sync?',
                       style: FlutterFlowTheme.of(context).titleMedium.override(
-                            fontFamily: 'Inter Tight',
+                            font: GoogleFonts.interTight(
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .fontStyle,
+                            ),
                             letterSpacing: 0.0,
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .titleMedium
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .titleMedium
+                                .fontStyle,
                           ),
                     ),
                   ),
@@ -139,8 +166,21 @@ class _OnboardingEmailsWidgetState extends State<OnboardingEmailsWidget> {
                           'Google',
                           style:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Inter Tight',
+                                    font: GoogleFonts.interTight(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontStyle,
                                   ),
                         ),
                       ],
@@ -182,11 +222,19 @@ class _OnboardingEmailsWidgetState extends State<OnboardingEmailsWidget> {
                         color: Color(0xFFDBA6A6),
                         textStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
-                                  fontFamily: 'Plus Jakarta Sans',
+                                  font: GoogleFonts.plusJakartaSans(
+                                    fontWeight: FontWeight.bold,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   color: Color(0xFF101213),
                                   fontSize: 15.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
                         elevation: 3.0,
                         borderSide: BorderSide(

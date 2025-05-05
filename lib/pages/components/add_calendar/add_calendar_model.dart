@@ -1,9 +1,10 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'add_item_widget.dart' show AddItemWidget;
+import 'add_calendar_widget.dart' show AddCalendarWidget;
 import 'package:flutter/material.dart';
 
-class AddItemModel extends FlutterFlowModel<AddItemWidget> {
+class AddCalendarModel extends FlutterFlowModel<AddCalendarWidget> {
   ///  Local state fields for this component.
 
   List<String> calendarNameList = [];
@@ -28,6 +29,12 @@ class AddItemModel extends FlutterFlowModel<AddItemWidget> {
 
   int? selection;
 
+  int loopingInt = 0;
+
+  int eventListNum = 100;
+
+  bool nullSelected = false;
+
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for itemTypeDrop widget.
@@ -37,9 +44,11 @@ class AddItemModel extends FlutterFlowModel<AddItemWidget> {
   String? selectionDropValue;
   FormFieldController<String>? selectionDropValueController;
   // Stores action output result for [Custom Action - signInWithGoogle] action in Button widget.
-  String? updated2GoogleToken;
+  String? updatedGoogleToken;
   // Stores action output result for [Custom Action - getEventsFromCalendar] action in Button widget.
-  List<dynamic>? eventList;
+  List<dynamic>? eventListFromFetch;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  CalendarRecord? calendarAdded;
 
   @override
   void initState(BuildContext context) {}

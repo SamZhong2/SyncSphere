@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'basic_form_field_model.dart';
 export 'basic_form_field_model.dart';
 
@@ -8,11 +9,19 @@ class BasicFormFieldWidget extends StatefulWidget {
   const BasicFormFieldWidget({
     super.key,
     required this.titleText,
-    required this.hintText,
-  });
+    this.hintText,
+    this.preText,
+    this.maxLines,
+    bool? readOnly,
+  }) : this.readOnly = readOnly ?? false;
 
   final String? titleText;
   final String? hintText;
+  final String? preText;
+  final int? maxLines;
+
+  /// false means editable [defaults false]
+  final bool readOnly;
 
   @override
   State<BasicFormFieldWidget> createState() => _BasicFormFieldWidgetState();
@@ -32,7 +41,8 @@ class _BasicFormFieldWidgetState extends State<BasicFormFieldWidget> {
     super.initState();
     _model = createModel(context, () => BasicFormFieldModel());
 
-    _model.textController ??= TextEditingController();
+    _model.textController ??= TextEditingController(
+        text: widget.preText == 'null' ? '' : widget.preText);
     _model.textFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -61,8 +71,17 @@ class _BasicFormFieldWidgetState extends State<BasicFormFieldWidget> {
             child: Text(
               widget.titleText!,
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Inter',
+                    font: GoogleFonts.inter(
+                      fontWeight:
+                          FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                    ),
                     letterSpacing: 0.0,
+                    fontWeight:
+                        FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                   ),
             ),
           ),
@@ -88,17 +107,40 @@ class _BasicFormFieldWidgetState extends State<BasicFormFieldWidget> {
                 controller: _model.textController,
                 focusNode: _model.textFieldFocusNode,
                 autofocus: false,
+                readOnly: widget.readOnly,
                 obscureText: false,
                 decoration: InputDecoration(
                   isDense: true,
                   labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Inter',
+                        font: GoogleFonts.inter(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .fontWeight,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .fontStyle,
+                        ),
                         letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).labelMedium.fontStyle,
                       ),
                   hintText: widget.hintText,
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Inter',
+                        font: GoogleFonts.inter(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .fontWeight,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .fontStyle,
+                        ),
                         letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).labelMedium.fontStyle,
                       ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
@@ -132,9 +174,20 @@ class _BasicFormFieldWidgetState extends State<BasicFormFieldWidget> {
                   fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Inter',
+                      font: GoogleFonts.inter(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
                       letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                     ),
+                maxLines: widget.maxLines,
+                minLines: 1,
                 cursorColor: FlutterFlowTheme.of(context).primaryText,
                 validator: _model.textControllerValidator.asValidator(context),
               ),

@@ -2,11 +2,13 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/backend/push_notifications/push_notifications_handler.dart'
     show PushNotificationsHandler;
+import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
@@ -72,24 +74,21 @@ class AppStateNotifier extends ChangeNotifier {
   }
 }
 
-GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
+GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
+    GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? HomePageWidget() : LoginWidget(),
+          appStateNotifier.loggedIn ? entryPage ?? NavBarPage() : LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? HomePageWidget() : LoginWidget(),
-        ),
-        FFRoute(
-          name: HomePageWidget.routeName,
-          path: HomePageWidget.routePath,
-          builder: (context, params) => HomePageWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? entryPage ?? NavBarPage()
+              : LoginWidget(),
         ),
         FFRoute(
           name: LoginWidget.routeName,
@@ -97,19 +96,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
-          name: OnboardingInfoWidget.routeName,
-          path: OnboardingInfoWidget.routePath,
-          builder: (context, params) => OnboardingInfoWidget(),
-        ),
-        FFRoute(
           name: OnboardingEmailsWidget.routeName,
           path: OnboardingEmailsWidget.routePath,
           builder: (context, params) => OnboardingEmailsWidget(),
-        ),
-        FFRoute(
-          name: TempPageLinkingWidget.routeName,
-          path: TempPageLinkingWidget.routePath,
-          builder: (context, params) => TempPageLinkingWidget(),
         ),
         FFRoute(
           name: TempCalendarWidget.routeName,
@@ -123,9 +112,45 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: CalendarWidget.routeName,
-          path: CalendarWidget.routePath,
-          builder: (context, params) => CalendarWidget(),
+          name: OnboardingInfoWidget.routeName,
+          path: OnboardingInfoWidget.routePath,
+          builder: (context, params) => OnboardingInfoWidget(),
+        ),
+        FFRoute(
+          name: HomePageWidget.routeName,
+          path: HomePageWidget.routePath,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'HomePage')
+              : NavBarPage(
+                  initialPage: 'HomePage',
+                  page: HomePageWidget(),
+                ),
+        ),
+        FFRoute(
+          name: CalendarListViewWidget.routeName,
+          path: CalendarListViewWidget.routePath,
+          asyncParams: {
+            'calendarDoc': getDoc(['Calendar'], CalendarRecord.fromSnapshot),
+          },
+          builder: (context, params) => NavBarPage(
+            initialPage: '',
+            page: CalendarListViewWidget(
+              calendarDoc: params.getParam(
+                'calendarDoc',
+                ParamType.Document,
+              ),
+            ),
+          ),
+        ),
+        FFRoute(
+          name: AiPageWidget.routeName,
+          path: AiPageWidget.routePath,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'AiPage')
+              : NavBarPage(
+                  initialPage: 'AiPage',
+                  page: AiPageWidget(),
+                ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -245,6 +270,7 @@ class FFParameters {
     ParamType type, {
     bool isList = false,
     List<String>? collectionNamePath,
+    StructBuilder<T>? structBuilder,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -263,6 +289,7 @@ class FFParameters {
       type,
       isList,
       collectionNamePath: collectionNamePath,
+      structBuilder: structBuilder,
     );
   }
 }
