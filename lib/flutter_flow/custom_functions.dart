@@ -256,7 +256,14 @@ List<String>? chatLogToList(String? chatLog) {
 
   final List<String> entries = matches.map((match) {
     final userPrompt = match.group(1)?.trim() ?? '';
-    final response = match.group(2)?.trim() ?? '';
+    String response = match.group(2)?.trim() ?? '';
+
+    // Truncate response at 'USER ENDED SESSION.' if present
+    final endSessionIndex = response.indexOf('USER ENDED SESSION.');
+    if (endSessionIndex != -1) {
+      response = response.substring(0, endSessionIndex).trim();
+    }
+
     return 'User: $userPrompt\n\nAssistant: $response';
   }).toList();
 

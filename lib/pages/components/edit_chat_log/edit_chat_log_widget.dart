@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'edit_chat_log_model.dart';
@@ -141,57 +142,14 @@ class _EditChatLogWidgetState extends State<EditChatLogWidget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                            width: double.infinity,
-                            decoration: BoxDecoration(),
-                            child: Text(
-                              'Title',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                            ),
-                          ),
-                          Container(
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 10.0,
-                                  color: Color(0x33000000),
-                                  offset: Offset(
-                                    0.0,
-                                    2.0,
-                                  ),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  4.0, 8.0, 4.0, 8.0),
+                          Material(
+                            color: Colors.transparent,
+                            elevation: 0.0,
+                            child: Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(),
                               child: Text(
-                                valueOrDefault<String>(
-                                  _model.titleField,
-                                  'Title',
-                                ),
+                                'Title',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -211,6 +169,61 @@ class _EditChatLogWidgetState extends State<EditChatLogWidget> {
                                           .bodyMedium
                                           .fontStyle,
                                     ),
+                              ),
+                            ),
+                          ),
+                          Material(
+                            color: Colors.transparent,
+                            elevation: 0.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            child: Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFF6F6F6),
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 10.0,
+                                    color: Color(0x33000000),
+                                    offset: Offset(
+                                      0.0,
+                                      2.0,
+                                    ),
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    4.0, 8.0, 4.0, 8.0),
+                                child: Text(
+                                  valueOrDefault<String>(
+                                    _model.titleField,
+                                    'Title',
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                ),
                               ),
                             ),
                           ),
@@ -271,61 +284,27 @@ class _EditChatLogWidgetState extends State<EditChatLogWidget> {
                                       chatLogAsList[chatLogAsListIndex];
                                   return Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 5.0),
+                                        0.0, 0.0, 0.0, 8.0),
                                     child: Container(
-                                      width: double.infinity,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            blurRadius: 10.0,
-                                            color: Color(0x33000000),
-                                            offset: Offset(
-                                              0.0,
-                                              2.0,
-                                            ),
-                                          )
-                                        ],
+                                        color: Color(0xFFF6F6F6),
                                         borderRadius:
                                             BorderRadius.circular(10.0),
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             4.0, 8.0, 4.0, 8.0),
-                                        child: Text(
-                                          valueOrDefault<String>(
+                                        child: MarkdownBody(
+                                          data: valueOrDefault<String>(
                                             functions
                                                 .chatLogToList(_model.logField)
                                                 ?.elementAtOrNull(
                                                     chatLogAsListIndex),
                                             'Chat Log',
                                           ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                font: GoogleFonts.inter(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
-                                                letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                          selectable: true,
+                                          onTapLink: (_, url, __) =>
+                                              launchURL(url!),
                                         ),
                                       ),
                                     ),

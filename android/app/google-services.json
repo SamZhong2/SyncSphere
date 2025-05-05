@@ -58,6 +58,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "531824345975-3a1lj76nbcd4a61k5ia7gab0sg4eqg8v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uricsc305.SyncSphere",
+            "certificate_hash": "33deb9aeccafeac90599f7e14371203aa9c14ce7"
+          }
+        },
+        {
+          "client_id": "531824345975-ru7j52qatqt4o5i3g252sc533rg4horh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uricsc305.SyncSphere",
+            "certificate_hash": "c2f174563b20ae07d8e1aa5fd4ae6c87238ed05e"
+          }
+        },
+        {
           "client_id": "531824345975-t4t2u7t187en3nbvr5ii6um22qmm3tq3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -39,7 +39,7 @@ class AiPageModel extends FlutterFlowModel<AiPageWidget> {
       eventJsonsList[index] = updateFn(eventJsonsList[index]);
 
   String dailyReportMod =
-      'given the following list of events, offer a comprehensive briefing with suggestions of how i should spend my day.\n\nif the list is empty or if you cant find a list offer me an uplifting message because there is no work to be done today.\n\nIf the list of events pans more than one day, offer a comprehensive briefing with suggestions of how i should spend each day.';
+      'given the following list of events, offer a comprehensive briefing with suggestions of how i should spend my day.\n\nIf the list of events spans more than one day, offer a comprehensive briefing with suggestions of how i should spend each day.\n\nif the list is empty or if you cant find a list that means there are no upcoming events. In that case offer an uplifting message because there is no work to be done today.';
 
   Color planModeColor = Color(4292585126);
 

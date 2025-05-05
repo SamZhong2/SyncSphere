@@ -144,10 +144,9 @@ class _OnboardingInfoWidgetState extends State<OnboardingInfoWidget> {
                                         'ONBOARDING_INFO_PAGE_add_ICN_ON_TAP');
                                     logFirebaseEvent(
                                         'IconButton_store_media_for_upload');
-                                    final selectedMedia =
-                                        await selectMediaWithSourceBottomSheet(
-                                      context: context,
-                                      allowPhoto: true,
+                                    final selectedMedia = await selectMedia(
+                                      mediaSource: MediaSource.photoGallery,
+                                      multiImage: false,
                                     );
                                     if (selectedMedia != null &&
                                         selectedMedia.every((m) =>
